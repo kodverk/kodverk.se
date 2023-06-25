@@ -1,9 +1,9 @@
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "Kodverk",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Kodverk is a community of developers, designers, and other tech enthusiasts in Umeå, Sweden. We are a non-profit organization that aims to promote and support the local tech community.",
   mainNav: [
     {
       title: "Home",
@@ -11,8 +11,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    twitter: "https://twitter.com/kodverk",
+    github: "https://github.com/kodverk",
+    docs: "https://docs.kodverk.se",
   },
-}
+};

@@ -1,39 +1,54 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+import { Icons } from "~/components/icons";
+import { ThemeToggle } from "~/components/theme-toggle";
+import { buttonVariants } from "~/components/ui/button";
+import { siteConfig } from "~/config/site";
+
+import "~/styles/globals.css";
 
 export default function IndexPage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
-      </div>
-      <div className="flex gap-4">
-        <Link
-          href={siteConfig.links.docs}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
-          Documentation
-        </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          GitHub
-        </Link>
+    <section className="container mx-auto flex max-w-screen-md flex-col justify-center gap-2 pt-80">
+      <h1 className="flex items-end gap-4 leading-tight tracking-tighter">
+        <b className="text-2xl font-extrabold sm:text-4xl">Kodverk</b>
+        <i className="text-lg font-medium sm:text-3xl">kodverket, plural</i>
+      </h1>
+      <p className="ml-6 text-lg text-muted-foreground">
+        [Orklass]: Substantiv <br />
+        [Uttal]: /kɔdˈværk/ <br />
+      </p>
+      <div className="flex flex-1 items-center justify-end space-x-4">
+        <nav className="flex items-center space-x-1">
+          <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
+            <div
+              className={buttonVariants({
+                size: "sm",
+                variant: "ghost",
+              })}
+            >
+              <Icons.gitHub className="h-5 w-5" />
+              <span className="sr-only">GitHub</span>
+            </div>
+          </Link>
+          <Link
+            href={siteConfig.links.twitter}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div
+              className={buttonVariants({
+                size: "sm",
+                variant: "ghost",
+              })}
+            >
+              <Icons.twitter className="h-5 w-5 fill-current" />
+              <span className="sr-only">Twitter</span>
+            </div>
+          </Link>
+          <ThemeToggle />
+        </nav>
       </div>
     </section>
-  )
+  );
 }
